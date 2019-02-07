@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         body: Card(
           child: Column(
             children: <Widget>[
-              Image.asset("assets/food.jpg"),
+              Image.asset("images/food.jpg"),
               Text("Food paradise"),
             ],
           ),
