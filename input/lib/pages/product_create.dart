@@ -12,9 +12,9 @@ class ProductCreatePage extends StatefulWidget {
 }
 
 class _ProductCreatePageState extends State<ProductCreatePage> {
-  String titleValue;
-  String description;
-  double priceValue;
+  String _titleValue;
+  String _description;
+  double _priceValue;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class _ProductCreatePageState extends State<ProductCreatePage> {
             decoration: InputDecoration(labelText: "Product Title"),
             onChanged: (String value) {
               setState(() {
-                titleValue = value;
+                _titleValue = value;
               });
             },
           ),
@@ -35,7 +35,7 @@ class _ProductCreatePageState extends State<ProductCreatePage> {
             maxLines: 4,
             onChanged: (String value) {
               setState(() {
-                description = value;
+                _description = value;
               });
             },
           ),
@@ -44,7 +44,7 @@ class _ProductCreatePageState extends State<ProductCreatePage> {
             keyboardType: TextInputType.number,
             onChanged: (String value) {
               setState(() {
-                priceValue = double.parse(value);
+                _priceValue = double.parse(value);
               });
             },
           ),
@@ -57,13 +57,13 @@ class _ProductCreatePageState extends State<ProductCreatePage> {
             textColor: Theme.of(context).buttonColor,
             onPressed: () {
               final Map<String, dynamic> product = {
-                'title': titleValue,
-                'description': description,
-                'price': priceValue,
+                'title': _titleValue,
+                'description': _description,
+                'price': _priceValue,
                 'image': 'images/food.jpg',
               };
               widget.addProduct(product);
-              Navigator.pushReplacementNamed(context, '/');
+              Navigator.pushReplacementNamed(context, '/products');
             },
           )
         ],
