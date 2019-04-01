@@ -40,6 +40,13 @@ class ProductPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(title),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(
+                Icons.favorite,
+              ),
+            ),
+          ],
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
